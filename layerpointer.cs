@@ -32,7 +32,6 @@ public class layerpointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Localgridspace.tag == "nextLayer" && maiNs.activeLayer <= 3 && maiNs.activeLayer >= 0)
         {
             gridColour.enabled = true;
