@@ -762,11 +762,13 @@ public class tile : MonoBehaviour
 
             if (leftRightcounter >= 4 || upDowncounter >= 4 || diaganalRightleft >= 4 || diaganalLeftRight >= 4 || forwardBackcounter >= 4 || frontleftright >= 4 || backleftright >= 4|| diaganalBackRightLeft>=4 || diaganalBackLeftRight >=4|| vecticalBackFornt >=4 || vecticalForntBack >=4 && parentGrid.GameState != "GameOver")
             {
+                parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
                 parentGrid.Winner.text = " <color=red> Red wins </color> <br> press 'space' to restart";
                 parentGrid.GameState = "GameOver";
             }
             if (BleftRightcounter >= 4 || BupDowncounter >= 4 || BdiaganalRightleft >= 4 || BdiaganalLeftRight >= 4 || BforwardBackcounter >= 4 || Bfrontleftright >= 4 || Bbackleftright >= 4|| BdiaganalBackRightLeft >= 4 || BdiaganalBackLeftRight >= 4 || bvecticalForntBack>=4 || bvecticalBackFornt>=4 && parentGrid.GameState != "GameOver")
             {
+                parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
                 parentGrid.Winner.text = " <color=blue>Blue wins </color> <br> press 'space' to restart";
                 parentGrid.GameState = "GameOver";
             }

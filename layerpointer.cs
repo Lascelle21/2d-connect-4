@@ -17,7 +17,7 @@ public class layerpointer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(Localgridspace.tag);
+       // print(Localgridspace.tag);
         //print(crossoveR+"dddd");
         //print(GetComponentInParent<GameObject>().tag);
         maiNs = Localgridspace.griD;

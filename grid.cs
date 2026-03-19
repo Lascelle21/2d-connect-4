@@ -21,6 +21,7 @@ public class grid : MonoBehaviour
     //public gridSquare tilePrefab;
     void Start()
     {
+        Winner.rectTransform.position = new Vector3 (1.7f,6 ,0);
         GriD = new tile[gridSize.x, gridSize.y, gridSize.z];
         //layerS = new layerCon[gridSize.x, gridSize.y,gridSize.z];
         //layerDis = new highlight[gridSize.x, gridSize.y, gridSize.z];
@@ -60,8 +61,18 @@ public class grid : MonoBehaviour
     }
     private void Update()
     {
-        if (GameState == "GameOver")
+        print(Winner.rectTransform.position);
+        print(Winner.rectTransform.position);
+        if (GameState == "red")
         {
+            Winner.text= "<color=red> Red turn </color>";
+            }
+        if (GameState == "blue")
+        {
+            Winner.text = "<color=blue> Blue turn </color>";
+        }
+        if (GameState == "GameOver")
+        {           
             aidboxes[0].enabled = false;
             aidboxes[1].enabled = false;
             if (Input.GetKeyDown("space"))
