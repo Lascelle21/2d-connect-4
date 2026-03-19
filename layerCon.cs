@@ -23,8 +23,6 @@ public class layerCon : MonoBehaviour
 
     private void Update()
     {
-        if (layerChecker.GameState != "GameOver")
-        {
             if (zLayer == layerChecker.activeLayer)
             {
                 spriteRenderer.color = Color.green;
@@ -32,34 +30,25 @@ public class layerCon : MonoBehaviour
             if (zLayer != layerChecker.activeLayer && selecteD == false)
             {
                 spriteRenderer.color = Color.white;
-            }
-        }
+            }        
     }
     // Update is called once per frame
     private void OnMouseDown()
-    {
-        if (layerChecker.GameState != "GameOver")
-        {
+    {        
             layerChecker.TurnOnLayer(zLayer);
-        }
     }
     void OnMouseOver()
     {
-        if (layerChecker.GameState != "GameOver")
-        {
             selecteD = true;
             spriteRenderer.color = Color.grey;
-        }
     }
     void OnMouseExit()
     {
-        if (layerChecker.GameState != "GameOver")
-        {
-            selecteD = false;
+        selecteD = false;
             if (zLayer != layerChecker.activeLayer)
             {
                 spriteRenderer.color = Color.white;
             }
-        }
+        
     }
 }
