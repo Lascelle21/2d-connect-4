@@ -21,7 +21,7 @@ public class grid : MonoBehaviour
     //public gridSquare tilePrefab;
     void Start()
     {
-        Winner.rectTransform.position = new Vector3 (1.7f,6 ,0);
+        //Winner.rectTransform.position = new Vector3 (1.7f,6 ,0);
         GriD = new tile[gridSize.x, gridSize.y, gridSize.z];
         //layerS = new layerCon[gridSize.x, gridSize.y,gridSize.z];
         //layerDis = new highlight[gridSize.x, gridSize.y, gridSize.z];
@@ -61,8 +61,11 @@ public class grid : MonoBehaviour
     }
     private void Update()
     {
-        print(Winner.rectTransform.position);
-        print(Winner.rectTransform.position);
+       // print(aidboxes[0].rectTransform.position+"previous");
+        //print(aidboxes[1].rectTransform.position + "next");
+        //print(Screen.currentResolution);
+        screenresAdjust();
+        
         if (GameState == "red")
         {
             Winner.text= "<color=red> Red turn </color>";
@@ -78,6 +81,31 @@ public class grid : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
                 SceneManager.LoadScene("sampleScene");
+            }
+        }
+    }
+    private void screenresAdjust()
+    {
+        print(Screen.currentResolution);
+        if (GameState != "GameOver")
+        {
+            if (Screen.currentResolution.width == 1920 && Screen.currentResolution.height == 1080)
+            {
+                Winner.rectTransform.position = new Vector3(1.7f, 6, 0);
+                aidboxes[0].rectTransform.position = new Vector3(3.13f, 5.06f, 0);
+                aidboxes[1].rectTransform.position = new Vector3(3.17f, 2.56f, 0);
+            }
+            if (Screen.currentResolution.width == 3840 && Screen.currentResolution.height == 2160)
+            {
+                Winner.rectTransform.position = new Vector3(2f, 6, 0);
+                aidboxes[0].rectTransform.position = new Vector3(3.13f, 5.06f, 0);
+                aidboxes[1].rectTransform.position = new Vector3(3.17f, 2.56f, 0);
+            }
+            if (Screen.currentResolution.width == 1280 && Screen.currentResolution.height == 800)
+            {
+                Winner.rectTransform.position = new Vector3(2f, 6, 0);
+                aidboxes[0].rectTransform.position = new Vector3(3.13f, 5.06f, 0);
+                aidboxes[1].rectTransform.position = new Vector3(3.17f, 2.56f, 0);
             }
         }
     }

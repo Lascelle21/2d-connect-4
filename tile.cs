@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -762,13 +763,27 @@ public class tile : MonoBehaviour
 
             if (leftRightcounter >= 4 || upDowncounter >= 4 || diaganalRightleft >= 4 || diaganalLeftRight >= 4 || forwardBackcounter >= 4 || frontleftright >= 4 || backleftright >= 4|| diaganalBackRightLeft>=4 || diaganalBackLeftRight >=4|| vecticalBackFornt >=4 || vecticalForntBack >=4 && parentGrid.GameState != "GameOver")
             {
-                parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
-                parentGrid.Winner.text = " <color=red> Red wins </color> <br> press 'space' to restart";
+                if (Screen.currentResolution.width == 1920 && Screen.currentResolution.height == 1080)
+                {
+                    parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
+                }
+                if (Screen.currentResolution.width == 3840 && Screen.currentResolution.height == 2160)
+                {
+                   parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
+                }
+                    parentGrid.Winner.text = " <color=red> Red wins </color> <br> press 'space' to restart";
                 parentGrid.GameState = "GameOver";
             }
             if (BleftRightcounter >= 4 || BupDowncounter >= 4 || BdiaganalRightleft >= 4 || BdiaganalLeftRight >= 4 || BforwardBackcounter >= 4 || Bfrontleftright >= 4 || Bbackleftright >= 4|| BdiaganalBackRightLeft >= 4 || BdiaganalBackLeftRight >= 4 || bvecticalForntBack>=4 || bvecticalBackFornt>=4 && parentGrid.GameState != "GameOver")
             {
-                parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
+                if (Screen.currentResolution.width == 1920 && Screen.currentResolution.height == 1080)
+                {
+                    parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
+                }
+                if (Screen.currentResolution.width == 3840 && Screen.currentResolution.height == 2160)
+                {
+                    parentGrid.Winner.rectTransform.position = new Vector3(1.7f, 3.25f, 0);
+                }
                 parentGrid.Winner.text = " <color=blue>Blue wins </color> <br> press 'space' to restart";
                 parentGrid.GameState = "GameOver";
             }
